@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xou-uA-4tP">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fyh-By-zuW">
+            <objects>
+                <navigationController id="Xou-uA-4tP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1oT-kU-gJP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XwU-i4-dZ7" kind="relationship" relationship="rootViewController" id="vK6-I7-mdR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBV-lH-cBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="-331"/>
+        </scene>
+        <!--Circle Chart View Controller-->
+        <scene sceneID="6kY-GE-GVL">
+            <objects>
+                <viewController storyboardIdentifier="CircleChartViewController" id="eb3-tR-x3W" customClass="CircleChartViewController" customModule="chart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8qf-lk-PAU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mqc-nC-snm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nSY-yc-12d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrF-Xe-wdl" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FrF-Xe-wdl" secondAttribute="trailing" id="5PR-jX-3Qb"/>
+                            <constraint firstItem="FrF-Xe-wdl" firstAttribute="top" secondItem="nSY-yc-12d" secondAttribute="top" constant="20" id="Ncw-5l-C8R"/>
+                            <constraint firstItem="Mqc-nC-snm" firstAttribute="top" secondItem="FrF-Xe-wdl" secondAttribute="bottom" id="Z8f-rM-5re"/>
+                            <constraint firstItem="FrF-Xe-wdl" firstAttribute="leading" secondItem="nSY-yc-12d" secondAttribute="leading" id="yGo-YI-jjn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="FrF-Xe-wdl" id="tjT-Im-NDp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewK-10-ubM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-551" y="347"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="8p7-ni-EWt">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="XwU-i4-dZ7" customClass="MainViewController" customModule="chart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gji-cV-VPZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wH3-r8-fes"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vvc-ia-wm2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsf-dO-BQg">
+                                <rect key="frame" x="261" y="232" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="9jz-40-EsP"/>
+                                    <constraint firstAttribute="height" constant="30" id="TGO-qI-6D9"/>
+                                </constraints>
+                                <state key="normal" title="Biểu đồ cột"/>
+                                <connections>
+                                    <action selector="chartBtnTouched:" destination="XwU-i4-dZ7" eventType="touchUpInside" id="u40-ak-MOi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qd-ZB-RoN">
+                                <rect key="frame" x="258" y="304" width="84" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UP2-Zk-hCG"/>
+                                    <constraint firstAttribute="width" constant="84" id="hl1-v9-mZd"/>
+                                </constraints>
+                                <state key="normal" title="Biểu đồ tròn"/>
+                                <connections>
+                                    <action selector="chartBtnTouched:" destination="XwU-i4-dZ7" eventType="touchUpInside" id="IPu-Ye-akm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAo-Wr-bHD">
+                                <rect key="frame" x="217" y="151" width="167" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="Pw9-Wb-VCv"/>
+                                    <constraint firstAttribute="height" constant="30" id="mrU-dW-rA3"/>
+                                </constraints>
+                                <state key="normal" title="Biểu đồ đường biểu diễn"/>
+                                <connections>
+                                    <action selector="chartBtnTouched:" destination="XwU-i4-dZ7" eventType="touchUpInside" id="q0E-o2-UYK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6qd-ZB-RoN" firstAttribute="centerX" secondItem="vvc-ia-wm2" secondAttribute="centerX" id="3Qm-Me-wUp"/>
+                            <constraint firstItem="vAo-Wr-bHD" firstAttribute="top" secondItem="gji-cV-VPZ" secondAttribute="bottom" constant="87" id="BNg-Z2-WaR"/>
+                            <constraint firstItem="6qd-ZB-RoN" firstAttribute="top" secondItem="Vsf-dO-BQg" secondAttribute="bottom" constant="42" id="G0L-t7-7jc"/>
+                            <constraint firstItem="Vsf-dO-BQg" firstAttribute="centerX" secondItem="vvc-ia-wm2" secondAttribute="centerX" id="IcO-lD-lzl"/>
+                            <constraint firstItem="vAo-Wr-bHD" firstAttribute="centerX" secondItem="vvc-ia-wm2" secondAttribute="centerX" id="Phh-wk-wLa"/>
+                            <constraint firstItem="Vsf-dO-BQg" firstAttribute="top" secondItem="vAo-Wr-bHD" secondAttribute="bottom" constant="51" id="vZb-Bc-mLl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Q0-Pe-0Y3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEY-zQ-dvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="-331"/>
+        </scene>
+        <!--Bar Chart View Controller-->
+        <scene sceneID="W7Y-eK-j8L">
+            <objects>
+                <viewController storyboardIdentifier="BarChartViewController" id="CRI-l6-0O2" customClass="BarChartViewController" customModule="chart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8dL-Qr-eZ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="5L6-SY-rX1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="255-7y-GPd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqH-Kb-v0U" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JqH-Kb-v0U" secondAttribute="trailing" id="Lrr-KX-zKa"/>
+                            <constraint firstItem="5L6-SY-rX1" firstAttribute="top" secondItem="JqH-Kb-v0U" secondAttribute="bottom" id="bDa-OJ-ZEs"/>
+                            <constraint firstItem="JqH-Kb-v0U" firstAttribute="top" secondItem="255-7y-GPd" secondAttribute="top" constant="20" id="voO-fg-qRh"/>
+                            <constraint firstItem="JqH-Kb-v0U" firstAttribute="leading" secondItem="255-7y-GPd" secondAttribute="leading" id="wrs-Yo-xip"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="JqH-Kb-v0U" id="eBA-Rz-b7c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJM-9n-wyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="347"/>
+        </scene>
+        <!--Line Chart View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LineChartViewController" id="BYZ-38-t0r" customClass="LineChartViewController" customModule="chart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hW5-v9-cFT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="40" width="560" height="560"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hW5-v9-cFT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZAf-7l-cSP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hW5-v9-cFT" secondAttribute="bottom" id="yH8-ho-tO7"/>
+                            <constraint firstItem="hW5-v9-cFT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="yIW-gq-Ri4"/>
+                            <constraint firstItem="hW5-v9-cFT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yve-x0-x6m"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bjO-h2-pun"/>
+                    <connections>
+                        <outlet property="chartView" destination="hW5-v9-cFT" id="KFp-Q9-wN6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="169" y="347"/>
+        </scene>
+    </scenes>
+</document>
